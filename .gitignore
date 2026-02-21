@@ -1,0 +1,25 @@
+## .NET gitignore
+
+# Build results
+bin/
+obj/
+*.user
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Visual Studio
+.vs/
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Rider
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
