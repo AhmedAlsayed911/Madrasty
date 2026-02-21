@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Madrasty.Api/Madrasty.Api.csproj" />
+  <Project Path="Madrasty.Core/Madrasty.Core.csproj" />
+  <Project Path="Madrasty.Domain/Madrasty.Domain.csproj" />
+  <Project Path="Madrasty.Infrastructure/Madrasty.Infrastructure.csproj" />
+  <Project Path="Madrasty.Service/Madrasty.Service.csproj" />
+</Solution>
