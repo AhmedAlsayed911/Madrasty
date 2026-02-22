@@ -7,10 +7,8 @@ namespace Madrasty.Core.Wrappers
         public static async Task<PaginatedResult<T>> ToPaginatedListAsync<T>(this IQueryable<T> source, int pageNumber, int pageSize)
             where T : class
         {
-            if (source == null)
-            {
+            if (source is null)
                 throw new Exception("Empty");
-            }
 
             pageNumber = pageNumber == 0 ? 1 : pageNumber;
             pageSize = pageSize == 0 ? 10 : pageSize;

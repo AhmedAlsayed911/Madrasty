@@ -1,6 +1,6 @@
 ﻿namespace Madrasty.Domain.Helpers
 {
-    public enum StudentOrderdingEnum
+    public enum StudentOrderingEnum
     {
         Id = 0,
         Name = 1,

@@ -77,7 +77,7 @@ namespace Madrasty.Service.Services
             return studentRepostitory.GetTableNoTracking().AsQueryable();
         }
 
-        public IQueryable<Student> FilterStudentPaginatedQuery(StudentOrderdingEnum orderby, string search)
+        public IQueryable<Student> FilterStudentPaginatedQuery(StudentOrderingEnum orderby, string search)
         {
             var queryable = studentRepostitory.GetTableNoTracking().AsQueryable();
 
@@ -87,16 +87,16 @@ namespace Madrasty.Service.Services
 
             switch (orderby)
             {
-                case StudentOrderdingEnum.Id:
+                case StudentOrderingEnum.Id:
                     queryable = queryable.OrderBy(x => x.StudID);
                     break;
-                case StudentOrderdingEnum.Name:
+                case StudentOrderingEnum.Name:
                     queryable = queryable.OrderBy(x => x.Name);
                     break;
-                case StudentOrderdingEnum.Address:
+                case StudentOrderingEnum.Address:
                     queryable = queryable.OrderBy(x => x.Address);
                     break;
-                case StudentOrderdingEnum.DepartmentName:
+                case StudentOrderingEnum.DepartmentName:
                     queryable = queryable.OrderBy(x => x.Department.DName);
                     break;
                 default:
