@@ -1,8 +1,6 @@
 ﻿using Madrasty.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Reflection;
 
 namespace Madrasty.Infrastructure.Data
 {
@@ -17,5 +15,14 @@ namespace Madrasty.Infrastructure.Data
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<StudentSubject> StudentSubjects { get; set; }
         public DbSet<DepartmentSubject> DepartmentSubjects { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<InstructorSubjects> InstructorSubjects { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
+
 }
