@@ -37,7 +37,7 @@ namespace Madrasty.Core.Features.Students.Queries.Handlers
         public async Task<PaginatedResult<StudentPaginatedListResponse>> Handle(GetStudentPaginatedListQuery request, CancellationToken cancellationToken)
         {
             Expression<Func<Student, StudentPaginatedListResponse>> expression =
-                e => new StudentPaginatedListResponse(e.StudID, e.Name, e.Address, e.Department.DName);
+                e => new StudentPaginatedListResponse(e.StudID, e.Name, e.Address, e.Department.Name);
 
             var querableStudents = studentService.GetStudentsQueryable();
             var filteredQuery = studentService.FilterStudentPaginatedQuery(request.OrderBy, request.Search);
