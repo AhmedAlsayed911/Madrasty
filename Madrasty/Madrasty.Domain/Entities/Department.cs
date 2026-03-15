@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Madrasty.Domain.Entities
 {
@@ -12,11 +9,26 @@ namespace Madrasty.Domain.Entities
         {
             Students = new HashSet<Student>();
             DepartmentSubjects = new HashSet<DepartmentSubject>();
+            Instructors = new HashSet<Instructor>();
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DID { get; set; }
-        public string DName { get; set; }
+        [StringLength(200)]
+        public string? Name { get; set; }
+        public int? InsManager { get; set; }
+
+        [InverseProperty("Department")]
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<DepartmentSubject> DepartmentSubjects {  get; set; }
+        [InverseProperty("Department")]
+        public virtual ICollection<DepartmentSubject> DepartmentSubjects { get; set; }
+        [InverseProperty("Department")]
+        public virtual ICollection<Instructor> Instructors { get; set; }
+
+        [ForeignKey("InsManager")]
+        [InverseProperty("DepartmentManager")]
+        public virtual Instructor? Instructor { get; set; }
+
+
     }
 }
