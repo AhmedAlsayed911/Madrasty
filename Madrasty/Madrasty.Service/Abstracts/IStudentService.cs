@@ -13,6 +13,7 @@ namespace Madrasty.Service.Abstracts
         public Task<string> EditAsync(Student student);
         public Task<string> DeleteAsync(Student student);
         public IQueryable<Student> GetStudentsQueryable();
+        public IQueryable<Student> GetStudentsByDepartmentIdQueryable(int id);
         public IQueryable<Student> FilterStudentPaginatedQuery(StudentOrderingEnum orderBy, string search);
     }
 }

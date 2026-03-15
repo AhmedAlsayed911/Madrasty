@@ -21,6 +21,7 @@ namespace Madrasty.Api.Controllers
         public async Task<IActionResult> GetStudentListPaginated([FromQuery] GetStudentPaginatedListQuery query)
         {
             var response = await Mediator.Send(query);
+
             return Ok(response);
         }
 

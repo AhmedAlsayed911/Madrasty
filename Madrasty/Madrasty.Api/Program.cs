@@ -20,7 +20,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 
-//builder.Services.AddTransient<IStudentRepostitory, StudentRepostitory>();
 builder.Services.AddInfrastructureDependencies()
     .AddServiceDependencies()
     .AddCoreDependencies();

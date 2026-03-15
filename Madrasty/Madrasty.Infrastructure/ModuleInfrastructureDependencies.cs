@@ -2,9 +2,6 @@
 using Madrasty.Infrastructure.InfrastructureBases;
 using Madrasty.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Madrasty.Infrastructure
 {
@@ -12,6 +9,9 @@ namespace Madrasty.Infrastructure
     {
         public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services)
             => services.AddTransient<IStudentRepostitory, StudentRepostitory>()
-                .AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
+                    .AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>))
+                    .AddTransient<IDepartmentRepostitory, DepartmentRepostitory>()
+                    .AddTransient<IINstructorRepostitory, InstructorRepository>()
+                    .AddTransient<ISubjectRepostitory, SubjectRepository>();
     }
 }

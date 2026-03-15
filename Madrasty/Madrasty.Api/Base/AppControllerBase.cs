@@ -11,7 +11,8 @@ namespace Madrasty.Api.Base
     {
         private IMediator? _mediatorInstance;
         protected IMediator? Mediator
-            => _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
+         //=> _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
+         => _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
 
         public ObjectResult NewResult<T>(Response<T> response)
         {

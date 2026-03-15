@@ -97,13 +97,18 @@ namespace Madrasty.Service.Services
                     queryable = queryable.OrderBy(x => x.Address);
                     break;
                 case StudentOrderingEnum.DepartmentName:
-                    queryable = queryable.OrderBy(x => x.Department.DName);
+                    queryable = queryable.OrderBy(x => x.Department.Name);
                     break;
                 default:
                     return queryable;
             }
 
             return queryable;
+        }
+
+        public IQueryable<Student> GetStudentsByDepartmentIdQueryable(int id)
+        {
+            return studentRepostitory.GetTableNoTracking().Where(i => i.DID == id).AsQueryable();
         }
     }
 }

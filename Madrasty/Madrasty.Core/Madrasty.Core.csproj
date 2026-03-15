@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Madrasty.Domain\Madrasty.Domain.csproj" />
-    <ProjectReference Include="..\Madrasty.Infrastructure\Madrasty.Infrastructure.csproj" />
     <ProjectReference Include="..\Madrasty.Service\Madrasty.Service.csproj" />
   </ItemGroup>
 
@@ -18,6 +17,10 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mapping\Department\CommandsMapping\" />
   </ItemGroup>
 
 </Project>
